@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grid layout</title>
+
+    <meta name="title" content="Luxestate" />
+    <meta name="description" content="" />
+    <meta name="keyword" content="" />
+    <meta name="author" content="" />
+
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+
+    <!-- Tránh trùng lặp nội dung -->
+    <link rel="canonical" href="#" />
+
+    <!-- Meta Tag Facebook -->
+    <meta property="og:locale" content="en" />
+    <meta property="og:type" content="" />
+    <meta property="og:title" content="" />
+    <meta property="og:description" content="" />
+    <meta property="og:url" content="" />
+    <meta property="og:site_name" content="" />
+    <meta property="og:image" content="" />
+
+    <!-- Meta Tag Twitter -->
+    <meta name="twitter:card" content="" />
+    <meta name="twitter:title" content="" />
+    <meta name="twitter:description" content="" />
+    <meta name="twitter:site" content="" />
+    <meta name="twitter:image" content="" />
+    <meta name="twitter:creator" content="" />
+
+    <!-- Nhúng file css vào trang html -->
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/fonts.css" />
+
+    <style>
+      /* Grid */
+      .scgrid .container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 300px;
+        gap: 28px;
+        margin-top: 30px;
+      }
+      .scgrid-2 .container {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+      }
+      .scgrid-3 .container {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+      }
+      .scgrid-3_1 .container {
+        display: grid;
+        grid-template-columns: 1fr 380px;
+      }
+      .scgrid-3_2 .container {
+        display: grid;
+        grid-template-columns: 200px 1fr 380px;
+      }
+
+      .scgrid .scgrid__item {
+        background-color: #ffb6b6;
+        font-size: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .scgrid .scgrid__item:nth-child(2) {
+        background-color: #feffc0;
+      }
+      .scgrid .scgrid__item:nth-child(3) {
+        background-color: #bcfff3;
+      }
+
+      .scgrid-4 .container {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+      }
+      .scgrid-4 .scgrid__item:nth-child(1) {
+        grid-column-start: 1;
+        grid-column-end: 6;
+      }
+      .scgrid-4 .scgrid__item:nth-child(2) {
+        grid-column-start: 6;
+        grid-column-end: 13;
+      }
+
+      .scgrid-5 .container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        /* grid-template-rows: repeat(3, 250px); */
+        /* grid-auto-rows: 250px; */
+        gap: 30px;
+        margin-top: 30px;
+      }
+      .scgrid-5 .scgrid__item {
+        background-color: #ffef5b;
+        font-size: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        aspect-ratio: 376/250;
+      }
+      .scgrid-5 .scgrid__item:nth-child(2) {
+        background-color: #ab00ae;
+        grid-column-start: 2;
+        grid-column-end: 3;
+        grid-row-start: 1;
+        grid-row-end: 3;
+        aspect-ratio: 376/530;
+      }
+      .scgrid-5 .scgrid__item:nth-child(3) {
+        background-color: #000000;
+      }
+      .scgrid-5 .scgrid__item:nth-child(4) {
+        background-color: #ff3030;
+      }
+      .scgrid-5 .scgrid__item:nth-child(5) {
+        background-color: #00afab;
+      }
+      .scgrid-5 .scgrid__item:nth-child(6) {
+        background-color: #04ff78;
+      }
+      .scgrid-5 .scgrid__item:nth-child(7) {
+        background-color: #1d2180;
+        grid-column-start: 2;
+        grid-column-end: 4;
+        grid-row-start: 3;
+        grid-row-end: 4;
+        aspect-ratio: 782/250;
+      }
+    </style>
+  </head>
+
+  <body>
+    <main style="margin: 100px 0px">
+      <section class="scgrid">
+        <div class="container">
+          <div class="scgrid__item">1fr</div>
+          <div class="scgrid__item">1fr</div>
+        </div>
+      </section>
+
+      <section class="scgrid scgrid-2">
+        <div class="container">
+          <div class="scgrid__item">1fr</div>
+          <div class="scgrid__item">1fr</div>
+          <div class="scgrid__item">1fr</div>
+        </div>
+      </section>
+
+      <section class="scgrid scgrid-3">
+        <div class="container">
+          <div class="scgrid__item">8 (2fr)</div>
+          <div class="scgrid__item">4 (1fr)</div>
+        </div>
+      </section>
+      <section class="scgrid scgrid-3_1">
+        <div class="container">
+          <div class="scgrid__item">1fr</div>
+          <div class="scgrid__item">380px</div>
+        </div>
+      </section>
+      <section class="scgrid scgrid-3_2">
+        <div class="container">
+          <div class="scgrid__item">200px</div>
+          <div class="scgrid__item">1fr</div>
+          <div class="scgrid__item">380px</div>
+        </div>
+      </section>
+
+      <section class="scgrid scgrid-4">
+        <div class="container">
+          <div class="scgrid__item">5</div>
+          <div class="scgrid__item">7</div>
+        </div>
+      </section>
+
+      <section class="scgrid-5">
+        <div class="container">
+          <div class="scgrid__item">1</div>
+          <div class="scgrid__item">2</div>
+          <div class="scgrid__item">3</div>
+          <div class="scgrid__item">4</div>
+          <div class="scgrid__item">5</div>
+          <div class="scgrid__item">6</div>
+          <div class="scgrid__item">7</div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
